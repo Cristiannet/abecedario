@@ -432,3 +432,111 @@ img {
     padding: 40px 16px;
   }
 }
+/* =========================================
+   15. GIRO DE LAS TARJETAS DE LETRAS
+   ========================================= */
+
+.letter-card:has(.card-inner) {
+  position: relative;
+  height: 280px;
+  min-height: 280px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  perspective: 1000px;
+}
+
+.letter-card:has(.card-inner):hover {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.letter-card.volteada .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px 15px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-card);
+  box-shadow: var(--shadow-card);
+  text-align: center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.card-front {
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.card-front .letter-label,
+.card-front .letter-lowercase {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.card-front h2 {
+  margin: 10px 0;
+  color: var(--color-primary);
+  font-size: 4rem;
+  line-height: 1.2;
+}
+
+.card-front .letter-lowercase {
+  font-size: 2rem;
+}
+
+.card-back img {
+  width: 100%;
+  max-width: 180px;
+  height: 145px;
+  margin: 0 0 12px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.card-back p {
+  margin: 0;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .letter-card:has(.card-inner) {
+    height: 240px;
+    min-height: 240px;
+  }
+
+  .card-back img {
+    height: 110px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-inner {
+    transition: none;
+  }
+}
