@@ -1,3 +1,4 @@
+
 /* =====================================================
    LETRALIA: ESTILOS GENERALES
    Archivo: styles.css
@@ -223,6 +224,125 @@ img {
     background 0.2s ease;
 }
 
+.letter-card[data-tipo] {
+  position: relative;
+  min-height: 230px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+}
+
+.letter-card[data-tipo]:hover {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  min-height: 230px;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.letter-card.volteada .card-inner {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 18px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-card);
+  box-shadow: var(--shadow-card);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.card-front {
+  color: var(--color-primary);
+  transform: rotateY(0deg) translateZ(1px);
+  -webkit-transform: rotateY(0deg) translateZ(1px);
+}
+
+.card-front .letter-label {
+  position: absolute;
+  top: 15px;
+  left: 16px;
+  color: var(--color-muted);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.card-front h2 {
+  z-index: 1;
+  margin: 0;
+  color: var(--color-primary);
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.card-front .letter-lowercase {
+  z-index: 1;
+  margin-top: 4px;
+  color: var(--color-muted);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.card-back {
+  transform: rotateY(180deg) translateZ(1px);
+  -webkit-transform: rotateY(180deg) translateZ(1px);
+  background: #fff;
+}
+
+.letter-card .card-back img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  margin: 0;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+.card-back::after {
+  position: absolute;
+  inset: 50% 0 0;
+  background: linear-gradient(transparent, rgb(0 0 0 / 65%));
+  content: "";
+  pointer-events: none;
+}
+
+.letter-card .card-back p {
+  position: absolute;
+  z-index: 1;
+  right: 18px;
+  bottom: 14px;
+  left: 18px;
+  margin: 0;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: left;
+  text-shadow: 0 1px 4px rgb(0 0 0 / 50%);
+}
+
 .letter-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-hover);
@@ -245,6 +365,17 @@ img {
   margin: 10px 0 0;
   color: var(--color-text);
   font-weight: 600;
+}
+
+.image-credits {
+  margin-top: 18px;
+  color: var(--color-muted);
+  font-size: 0.78rem;
+  line-height: 1.8;
+}
+
+.image-credits a {
+  color: var(--color-primary-dark);
 }
 
 
