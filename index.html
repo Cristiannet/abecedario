@@ -1,103 +1,85 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Letralia | Aprende el abecedario</title>
- 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
- 
 <body>
- 
-  <!-- ================================================== -->
-<!-- INTEGRANTE 1                                       -->
-<!-- Rama: feature/letras-1                             -->
-<!-- Letras: A, B, C, D, E, F                           -->
-<!-- Responsable: estructura inicial y primeras letras -->
-<!-- ================================================== -->
- 
+
+  <!-- BARRA DE NAVEGACIÓN -->
   <header>
-<nav class="navbar">
-<a href="#inicio" class="logo">Letralia</a>
- 
+    <nav class="navbar">
+      <a href="#inicio" class="logo">Letralia</a>
       <ul class="nav-links">
-<li><a href="#inicio">Inicio</a></li>
-<li><a href="#abecedario">Abecedario</a></li>
-<li><a href="#equipo">Equipo</a></li>
-</ul>
-</nav>
-</header>
- 
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#abecedario">Abecedario</a></li>
+        <li><a href="#equipo">Equipo</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <main>
- 
-    <!-- PRESENTACIÓN GENERAL DEL PROYECTO -->
-<section id="inicio" class="hero">
-<h1>¡Bienvenido a Letralia!</h1>
- 
-      <p>
+    <!-- SECCIÓN HERO -->
+    <section id="inicio" class="hero">
+      <h1>¡Bienvenido a Letralia!</h1>
+      <p>Aprende el abecedario español explorando las letras, descubriendo palabras y practicando cada día.</p>
+      <a href="#abecedario" class="btn">Explorar las letras</a>
+    </section>
 
-         Aprende el abecedario español explorando las letras,
+<!-- COMIENZO DE LA GALERÍA DE LETRAS -->
+    <section id="abecedario" class="alphabet-section">
+      <h2>Explora el abecedario</h2>
+      <p>Selecciona una letra para conocerla mejor.</p>
 
-         descubriendo palabras y practicando cada día.
-</p>
- 
-      <a href="#abecedario" class="btn">
+      <!-- AQUÍ COLOCAS LOS FILTROS Y EL CONTADOR -->
+      <div class="filters-container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; margin-bottom: 25px;">
+        <div class="filters">
+          <button type="button" id="all-filter" class="filter-btn is-active" aria-pressed="true">Todas</button>
+          <button type="button" id="vowels-filter" class="filter-btn" aria-pressed="false">Vocales</button>
+        </div>
 
-         Explorar las letras
-</a>
-</section>
- 
-    <!-- COMIENZO DE LA GALERÍA DE LETRAS -->
-<section id="abecedario" class="alphabet-section">
-<h2>Explora el abecedario</h2>
- 
-      <p>
+        <p class="counter-text" style="margin: 0; font-weight: 700; color: var(--color-primary-dark);">
+          Letras descubiertas: <span id="progress-count" style="color: var(--color-primary); font-size: 1.2rem;">0</span> / 27
+        </p>
+      </div>
 
-         Selecciona una letra para conocerla mejor.
-</p>
- 
+      <!-- CUADRÍCULA DE TARJETAS (AQUÍ EMPIEZAN TUS TARJETAS) -->
       <div class="alphabet-grid" id="alphabet-grid">
- 
+
         <!-- INTEGRANTE 1: LETRAS A-F -->
- 
         <article class="letter-card" data-letter="A">
-<h3>A a</h3>
-<p>Avión</p>
-</article>
- 
+          <h3>A a</h3>
+          <p>Avión</p>
+        </article>
+
         <article class="letter-card" data-letter="B">
-<h3>B b</h3>
-<p>Barco</p>
-</article>
- 
+          <h3>B b</h3>
+          <p>Barco</p>
+        </article>
+
         <article class="letter-card" data-letter="C">
-<h3>C c</h3>
-<p>Casa</p>
-</article>
- 
+          <h3>C c</h3>
+          <p>Casa</p>
+        </article>
+
         <article class="letter-card" data-letter="D">
-<h3>D d</h3>
-<p>Dado</p>
-</article>
- 
+          <h3>D d</h3>
+          <p>Dado</p>
+        </article>
+
         <article class="letter-card" data-letter="E">
-<h3>E e</h3>
-<p>Estrella</p>
-</article>
- 
+          <h3>E e</h3>
+          <p>Estrella</p>
+        </article>
+
         <article class="letter-card" data-letter="F">
-<h3>F f</h3>
-<p>Flor</p>
-</article>
- 
-        <!-- ================================================== -->
-<!-- INTEGRANTE 2                                       -->
-<!-- Rama: feature/letras-2                             -->
-<!-- Letras: G, H, I, J, K, L                           -->
-<!-- ================================================== -->
- 
+          <h3>F f</h3>
+          <p>Flor</p>
+        </article>
+
+        <!-- INTEGRANTE 2: LETRAS G-L -->
         <article class="letter-card" data-letter="G" data-tipo="consonante" tabindex="0" role="button" aria-pressed="false" aria-label="Descubrir la letra G">
           <div class="card-inner">
             <div class="card-face card-front">
@@ -106,7 +88,7 @@
               <span class="letter-lowercase">g</span>
             </div>
             <div class="card-face card-back" aria-hidden="true">
-              <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Calico_cat%2C_-_Assisi%2C_Italy.jpg/960px-Calico_cat%2C_-_Assisi%2C_Italy.jpg" alt="Gato tricolor sentado" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=600&auto=format&fit=crop" alt="Gato sentado" loading="lazy">
               <p>Gato</p>
             </div>
           </div>
@@ -120,7 +102,7 @@
               <span class="letter-lowercase">h</span>
             </div>
             <div class="card-face card-back" aria-hidden="true">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Ice_cream_cone_-_Summer_2018.jpg" alt="Cono de helado de varios sabores" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?q=80&w=600&auto=format&fit=crop" alt="Helado de sabores" loading="lazy">
               <p>Helado</p>
             </div>
           </div>
@@ -134,7 +116,7 @@
               <span class="letter-lowercase">i</span>
             </div>
             <div class="card-face card-back" aria-hidden="true">
-              <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Havelock_Island%2C_Tropical_beach_and_tree%2C_Andaman_Islands.jpg/960px-Havelock_Island%2C_Tropical_beach_and_tree%2C_Andaman_Islands.jpg" alt="Playa tropical de la isla Havelock" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600&auto=format&fit=crop" alt="Isla tropical" loading="lazy">
               <p>Isla</p>
             </div>
           </div>
@@ -148,7 +130,7 @@
               <span class="letter-lowercase">j</span>
             </div>
             <div class="card-face card-back" aria-hidden="true">
-              <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/006_Giraffe_portrait_in_the_Lake_Manyara_National_Park_Photo_by_Giles_Laurent.jpg/960px-006_Giraffe_portrait_in_the_Lake_Manyara_National_Park_Photo_by_Giles_Laurent.jpg" alt="Jirafa en el parque nacional del lago Manyara" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1547721064-da6cfb341d50?q=80&w=600&auto=format&fit=crop" alt="Jirafa en la sabana" loading="lazy">
               <p>Jirafa</p>
             </div>
           </div>
@@ -162,7 +144,7 @@
               <span class="letter-lowercase">k</span>
             </div>
             <div class="card-face card-back" aria-hidden="true">
-              <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Kiwi_Fruit_on_Sample.jpg/960px-Kiwi_Fruit_on_Sample.jpg" alt="Fruta kiwi cortada por la mitad" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1618897996318-5a901fa6ca71?q=80&w=600&auto=format&fit=crop" alt="Fruta kiwi" loading="lazy">
               <p>Kiwi</p>
             </div>
           </div>
@@ -176,180 +158,172 @@
               <span class="letter-lowercase">l</span>
             </div>
             <div class="card-face card-back" aria-hidden="true">
-              <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/011_The_lion_king_Tryggve_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg/960px-011_The_lion_king_Tryggve_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg" alt="León en el parque nacional del Serengeti" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1614027164847-1b28cfe1df60?q=80&w=600&auto=format&fit=crop" alt="León" loading="lazy">
               <p>León</p>
             </div>
           </div>
         </article>
- 
-        <!-- ================================================== -->
-<!-- INTEGRANTE 3                                       -->
-<!-- Rama: feature/letras-3                             -->
-<!-- Letras: M, N, Ñ, O, P                              -->
-<!-- ================================================== -->
- 
+
+        <!-- INTEGRANTE 3: LETRAS M-P (Pendiente de adaptar por Integrante 3) -->
         <article class="letter-card" data-letter="M">
-<h3>M m</h3>
-<p>Manzana</p>
-</article>
- 
+          <h3>M m</h3>
+          <p>Manzana</p>
+        </article>
+
         <article class="letter-card" data-letter="N">
-<h3>N n</h3>
-<p>Nube</p>
-</article>
- 
+          <h3>N n</h3>
+          <p>Nube</p>
+        </article>
+
         <article class="letter-card" data-letter="Ñ">
-<h3>Ñ ñ</h3>
-<p>Ñandú</p>
-</article>
- 
+          <h3>Ñ ñ</h3>
+          <p>Ñandú</p>
+        </article>
+
         <article class="letter-card" data-letter="O">
-<h3>O o</h3>
-<p>Oso</p>
-</article>
- 
+          <h3>O o</h3>
+          <p>Oso</p>
+        </article>
+
         <article class="letter-card" data-letter="P">
-<h3>P p</h3>
-<p>Pelota</p>
-</article>
- 
-        <!-- ================================================== -->
-<!-- INTEGRANTE 4                                       -->
-<!-- Rama: feature/letras-4                             -->
-<!-- Letras: Q, R, S, T, U                              -->
-<!-- ================================================== -->
- 
+          <h3>P p</h3>
+          <p>Pelota</p>
+        </article>
+
+        <!-- INTEGRANTE 4: LETRAS Q-U (Pendiente de adaptar por Integrante 4) -->
         <article class="letter-card" data-letter="Q">
-<h3>Q q</h3>
-<p>Queso</p>
-</article>
- 
+          <h3>Q q</h3>
+          <p>Queso</p>
+        </article>
+
         <article class="letter-card" data-letter="R">
-<h3>R r</h3>
-<p>Ratón</p>
-</article>
- 
+          <h3>R r</h3>
+          <p>Ratón</p>
+        </article>
+
         <article class="letter-card" data-letter="S">
-<h3>S s</h3>
-<p>Sol</p>
-</article>
- 
+          <h3>S s</h3>
+          <p>Sol</p>
+        </article>
+
         <article class="letter-card" data-letter="T">
-<h3>T t</h3>
-<p>Tortuga</p>
-</article>
- 
+          <h3>T t</h3>
+          <p>Tortuga</p>
+        </article>
+
         <article class="letter-card" data-letter="U">
-<h3>U u</h3>
-<p>Uvas</p>
-</article>
- 
-        <!-- ================================================== -->
-<!-- INTEGRANTE 5                                       -->
-<!-- Rama: feature/letras-5                             -->
-<!-- Letras: V, W, X, Y, Z                              -->
-<!-- ================================================== -->
- 
-        <article class="letter-card" data-letter="V">
-<h3>V v</h3>
-<p>Vaca</p>
-</article>
- 
-        <article class="letter-card" data-letter="W">
-<h3>W w</h3>
-<p>Wafle</p>
-</article>
- 
-        <article class="letter-card" data-letter="X">
-<h3>X x</h3>
-<p>Xilófono</p>
-</article>
- 
-        <article class="letter-card" data-letter="Y">
-<h3>Y y</h3>
-<p>Yoyó</p>
-</article>
- 
-        <article class="letter-card" data-letter="Z">
-<h3>Z z</h3>
-<p>Zorro</p>
-</article>
- 
+          <h3>U u</h3>
+          <p>Uvas</p>
+        </article>
+
+        <!-- INTEGRANTE 5: LETRAS V-Z (Adaptadas con imágenes directas funcionando) -->
+        <article class="letter-card" data-letter="V" data-tipo="consonante" tabindex="0" role="button" aria-pressed="false" aria-label="Descubrir la letra V">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <span class="letter-label">LETRA</span>
+              <h2>V</h2>
+              <span class="letter-lowercase">v</span>
+            </div>
+            <div class="card-face card-back" aria-hidden="true">
+              <img src="https://cdn.pixabay.com/photo/2015/06/07/13/13/cow-800306_1280.jpg" alt="Vaca en el campo" loading="lazy">
+              <p>Vaca</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="letter-card" data-letter="W" data-tipo="consonante" tabindex="0" role="button" aria-pressed="false" aria-label="Descubrir la letra W">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <span class="letter-label">LETRA</span>
+              <h2>W</h2>
+              <span class="letter-lowercase">w</span>
+            </div>
+            <div class="card-face card-back" aria-hidden="true">
+              <img src="https://images.unsplash.com/photo-1562376552-0d160a2f238d?q=80&w=600&auto=format&fit=crop" alt="Wafle con miel" loading="lazy">
+              <p>Wafle</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="letter-card" data-letter="X" data-tipo="consonante" tabindex="0" role="button" aria-pressed="false" aria-label="Descubrir la letra X">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <span class="letter-label">LETRA</span>
+              <h2>X</h2>
+              <span class="letter-lowercase">x</span>
+            </div>
+            <div class="card-face card-back" aria-hidden="true">
+              <img src="https://img.vevorstatic.com/es%2FMTMQ37YFZSYZU86MZ001V0%2Fgoods_img-v2%2Fglockenspiel-xylophone-m100-1.2.jpg?timestamp=1754617662000&format=webp&format=webp" alt="Xilófono musical" loading="lazy">
+              <p>Xilófono</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="letter-card" data-letter="Y" data-tipo="consonante" tabindex="0" role="button" aria-pressed="false" aria-label="Descubrir la letra Y">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <span class="letter-label">LETRA</span>
+              <h2>Y</h2>
+              <span class="letter-lowercase">y</span>
+            </div>
+            <div class="card-face card-back" aria-hidden="true">
+              <img src="https://iokus.co/cdn/shop/files/yoyo-madera-juego-tradicional-colombia.jpg?v=1773099535&width=1200" alt="Yoyó de juguete" loading="lazy">
+              <p>Yoyó</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="letter-card" data-letter="Z" data-tipo="consonante" tabindex="0" role="button" aria-pressed="false" aria-label="Descubrir la letra Z">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <span class="letter-label">LETRA</span>
+              <h2>Z</h2>
+              <span class="letter-lowercase">z</span>
+            </div>
+            <div class="card-face card-back" aria-hidden="true">
+              <img src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?q=80&w=600&auto=format&fit=crop" alt="Zorro silvestre" loading="lazy">
+              <p>Zorro</p>
+            </div>
+          </div>
+        </article>
+
       </div>
-      <p class="image-credits">
-        Créditos de imágenes:
-        <a href="https://commons.wikimedia.org/wiki/File:Calico_cat,_-_Assisi,_Italy.jpg" target="_blank" rel="noopener noreferrer">Gato: Terragio67, CC BY-SA 4.0</a>;
-        <a href="https://commons.wikimedia.org/wiki/File:Ice_cream_cone_-_Summer_2018.jpg" target="_blank" rel="noopener noreferrer">helado: Shari Fox, CC BY 2.0</a>;
-        <a href="https://commons.wikimedia.org/wiki/File:Havelock_Island,_Tropical_beach_and_tree,_Andaman_Islands.jpg" target="_blank" rel="noopener noreferrer">isla: Vyacheslav Argenberg, CC BY 4.0</a>;
-        <a href="https://commons.wikimedia.org/wiki/File:006_Giraffe_portrait_in_the_Lake_Manyara_National_Park_Photo_by_Giles_Laurent.jpg" target="_blank" rel="noopener noreferrer">jirafa: Giles Laurent, CC BY-SA 4.0</a>;
-        <a href="https://commons.wikimedia.org/wiki/File:011_The_lion_king_Tryggve_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg" target="_blank" rel="noopener noreferrer">león: Giles Laurent, CC BY-SA 4.0</a>;
-        <a href="https://commons.wikimedia.org/wiki/File:Kiwi_Fruit_on_Sample.jpg" target="_blank" rel="noopener noreferrer">kiwi: Iwai-Dialax, CC BY 4.0</a>.
-        <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Licencia CC BY 4.0</a> ·
-        <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a> ·
-        <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer">CC BY 2.0</a>.
-      </p>
-</section>
- 
-    <!-- ================================================== -->
-<!-- SECCIÓN DEL EQUIPO                                 -->
-<!-- Integración coordinada por todo el grupo           -->
-<!-- ================================================== -->
- 
+    </section>
+
+    <!-- SECCIÓN EQUIPO -->
     <section id="equipo" class="team-section">
-<h2>Nuestro equipo</h2>
- 
-      <p>
+      <h2>Nuestro equipo</h2>
+      <p>Somos un equipo que trabaja para hacer del aprendizaje del abecedario una experiencia divertida.</p>
 
-         Somos un equipo que trabaja para hacer del aprendizaje
-
-         del abecedario una experiencia divertida.
-</p>
- 
       <div class="team-grid">
- 
         <article class="team-card">
-<h3>Integrante 1</h3>
-<p>Desarrollo de las letras A-F.</p>
-</article>
- 
+          <h3>Integrante 1</h3>
+          <p>Desarrollo de las letras A-F.</p>
+        </article>
         <article class="team-card">
-<h3>Integrante 2</h3>
-<p>Desarrollo de las letras G-L.</p>
-</article>
- 
+          <h3>Integrante 2</h3>
+          <p>Desarrollo de las letras G-L.</p>
+        </article>
         <article class="team-card">
-<h3>Integrante 3</h3>
-<p>Desarrollo de las letras M-P.</p>
-</article>
- 
+          <h3>Integrante 3</h3>
+          <p>Desarrollo de las letras M-P.</p>
+        </article>
         <article class="team-card">
-<h3>Integrante 4</h3>
-<p>Desarrollo de las letras Q-U.</p>
-</article>
- 
+          <h3>Integrante 4</h3>
+          <p>Desarrollo de las letras Q-U.</p>
+        </article>
         <article class="team-card">
-<h3>Integrante 5</h3>
-<p>Desarrollo de las letras V-Z.</p>
-</article>
- 
+          <h3>Integrante 5</h3>
+          <p>Desarrollo de las letras V-Z.</p>
+        </article>
       </div>
-</section>
- 
+    </section>
   </main>
- 
-  <!-- ================================================== -->
-<!-- PIE DE PÁGINA                                      -->
-<!-- Integración final                                  -->
-<!-- ================================================== -->
- 
-  <footer class="footer">
-<p>
 
-       © 2026 Letralia. Proyecto educativo colaborativo.
-</p>
-</footer>
- 
+  <footer class="footer">
+    <p>© 2026 Letralia. Proyecto educativo colaborativo.</p>
+  </footer>
+
   <script src="script.js"></script>
- 
 </body>
 </html>
